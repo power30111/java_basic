@@ -1,23 +1,23 @@
-Enchance For Loop(향상된 루프) java5에서 처음나왔고, int i=0; 꼴이나 배열의 크기를 입력하지않아도 됨.(파이썬마냥)
+#반복문. Enchance For Loop(향상된 루프) java5에서 처음나왔고, int i=0; 꼴이나 배열의 크기를 입력하지않아도 됨.(파이썬마냥)
 즉 for(int i=0; i<array.length; i++) 또는 for(int mark:marks) 
 
-배열을 선언하고 초기화했을떄 -> ex) int [] Array = new int[5]; //Array라는 int형 배열을 선언하였는데, 크기가 5이다.
+#배열을 선언하고 초기화했을떄 -> ex) int [] Array = new int[5]; //Array라는 int형 배열을 선언하였는데, 크기가 5이다.
 이때 Array내부의 원소는 [0,0,0,0,0]이다. 이부분을 다른 수로 채우고싶을땐 Arrays.fill(Array,N)을 하면 N으로 채워진다.
 
-비교 ? 
+#비교연산자와 Equals()메서드의 차이.
 equals()메소드는 비교하고자 하는 두개의 대상의 값 자체를 비교
 ==연산자는 비교하고자 하는 두개의 대상의 주소값을 비교
 
-정렬 ? 
+#정렬 ?
 Arrays.sort(array)
 
-변수의 최대값 최소값을 모를떄 
+#변수의 최대값 최소값을 모를떄
 Integer.Max_VALUE 와 Integer.Min_VALUE 사용하면됨.
 
-최대값과 최소값 찾기 (Max,Min)
+#최대값과 최소값 찾기 (Max,Min)
 -> Collections.Max(), Collections.Min()
 
-소수점관련해서 돈이나,정확한 계산이 필요한 나눗셈의 경우
+#소수점관련해서 돈이나,정확한 계산이 필요한 나눗셈의 경우
 float, double 이 아닌 BigDecimal 을 써야한다. BigDecimal은 new BigDecimal(변수)로 객체를 생성할수있다.
 BigDecimal.divide()메서드를 사용하여 정확히 나눌수있다. ex) BigDecimal(A).divide(new BigDecimal(B));
 여기서 옵션이 더있는데 알아둬야할 옵션은 두가지.
@@ -25,16 +25,55 @@ Precision -> 정확도 (소수점 몇자리까지 표시?)
 Rounding mode -> 반올림(반올림 할까?)
 적용해서 예시를 들어보면 BigDecimal(A).divide(new BigDecimal(B),3,RoundingMode.UP); //3번쨰 소수점자리까지 표시하고 반올림
 
-메서드에 다양한 숫자의 argument를 입력하고싶은경우 (가변인수, 인자 여러개)
+#메서드에 다양한 숫자의 argument를 입력하고싶은경우 (가변인수, 인자 여러개)
 ex) void print(int... values) 로 나타낼수있다. 배열로 입력되는것같다.
 단. 가변인수는 모든 인자들중 맨뒤에 와야한다. ex) void print(int ... values, String name) -> error
 
-클래스를 출력할떄 출력형식을 변경할수있다.
+#클래스를 출력할떄 출력형식을 변경할수있다.
 ex) public String toString(){return ...} 이후
-System.out.println(class) 이렇게 호출하면 ...에 해당하는 내용이 출력된다. 
+System.out.println(class) 이렇게 호출하면 ...에 해당하는 내용이 출력된다. 보통 String toString은 맨 마지막에 위치한다.(관례?)
 
-ArrayList
+#클래스 구조와 관련하여..
+class 내부 구조는 크게 3가지로 구분될수있다. 1.state(상태) 2.constructors(생성자) 3.behavior(행위)
+state 는 말그대로 그 class 객체에 어떤 상태인지 알려주는 것.
+constructors 는 state를 선언하는 과정에서 객체를 생성하지말고 [ ex) private int speed = new speed(13);] 생성자를 통해 한다.
+이는 싱글톤패턴과도 관련이 있다.
+behavior는 이 객체가 어떤것을 할수있는지에 대해서 메서드로 나타낸다고 생각해두자.
+
+#ArrayList
 가변리스트이다 .add()메서드, .remove()메서드로 삽입또는 지울수있다. 자세한건 검색.
 선언하는 건 ArrayList items = new ArrayList(); 로 할수있는데, 여기서 제네릭(자바5에서 나온 기능)을 사용해야한다.
 즉 어떤 자료형을 ArrayList에 담을건지 명시해야한다는 뜻이다. ex) ArrayList<String> items = new ArrayList<String>();
 일반 Array와는 메서드도 다르므로 주의
+
+#Static
+static 키워드를 붙이게 되면 자바는 메모리 할당을 딱 한번만 하게된다. 즉 static을 붙인 변수든 클래스든간에 싱글톤 패턴을 사용한다.
+static 키워드를 붙인 메서드의 경우 객체 생성없이 클래스를 통해 메서드를 직접 호출할수있다.
+
+#String.format()
+ex) ("My name is %s, i'm %d years old.",name,year);
+name = String , year = int
+
+#자료형
+byte = 정수형중 가장 작은 범위를 가진 정수형으로써 8bit (256개의 숫자)
+short = 2 byte
+int = 4byte
+long = 8byte
+
+#상속 extends
+level2_inheritance package를 참고.
+ex) Person 이란 class가 있다면.
+    public class Student extends Person --> Person에 있는 것들을 모두 사용가능하다. 또한 다른기능들을 추가가능하다.
+    Person class => super class, Student class => sub class;
+여기에 추가적으로 아무것도 상속받지않는 class 는 기본적으로 Object를 상속받는다. 여기서 기본적인 class의 기능들을 상속받는다.
+결국 모든 class는 상속받는 관계이다.
+
+#Override
+상위 클래스에서 제공되는 적용법을 덮어쓰고 싶을때 사용.
+
+#상위클래스에 접근하고싶다면 super. 메서드를 사용하여 접근할수있다.
+하위 클래스에서의 생성자에서는 항상 상위클래스의 생성자를 호출한다. [super()을 쓰든 안쓰든 자동적으로 컴파일러에서 적용함]
+상위 클래스에서 생성자를 만들게되면 하위 클래스에서는 컴파일러 에러가 뜨는데, 해결하기 위한 방법은 2가지다.
+1. public superClass(){}와 public superClass(인자들){} 이렇게 두가지 경우의 생성자를 만든다(인자가 없을경우와 있을경우)
+2. 하위 클래스에서 super(필요한 인자); 를 호출하기.///예시는 level2_inheritance package 의 Person(superClass)와 Student(subClass)참고
+즉 하위 클래스에서는 무조건 상위클래스의 생성자가 정의되어야한다.
