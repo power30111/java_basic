@@ -2,11 +2,11 @@ package level2_inheritance;
 
 public class StudentRunner {
     public static void main(String[] args) {
-//        Student student = new Student();
+//        ClassCreate.Student student = new ClassCreate.Student();
 //        student.setName("Alice");
 //        student.setEmail("Alice.com");
 //
-//        Person person = new Person();
+//        ClassCreate.Person person = new ClassCreate.Person();
 //        System.out.println(person);
 //        System.out.println(person.toString());
         Employee employee = new Employee("Alice","Programmer Analyst");

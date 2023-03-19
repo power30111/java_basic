@@ -1,3 +1,7 @@
+package ClassCreate;
+
+import ClassCreate.Student;
+
 import java.math.BigDecimal;
 
 public class StudentRunner {
@@ -19,5 +23,7 @@ public class StudentRunner {
         System.out.println(student);
         student.removeMarkAtIndex(1);
         System.out.println(student);
+
+        System.out.println(student instanceof Object);
     }
 }

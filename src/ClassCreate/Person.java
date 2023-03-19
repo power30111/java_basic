@@ -1,3 +1,5 @@
+package ClassCreate;
+
 public class Person {
     // String array 생성.
     //가장 긴 글자수를 가진 문자를 찾기.
