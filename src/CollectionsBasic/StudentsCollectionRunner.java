@@ -20,7 +20,7 @@ public class StudentsCollectionRunner {
 
         System.out.println(studentSorts);
         System.out.println(studentSorts1);
-        Collections.sort(studentSorts1);
+        //Collections.sort(studentSorts1);
         System.out.println(studentSorts1);
 
         Collections.sort(studentSorts1, new DescendingStudentComparator());

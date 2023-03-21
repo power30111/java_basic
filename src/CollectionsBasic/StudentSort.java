@@ -1,6 +1,6 @@
 package CollectionsBasic;
 
-public class StudentSort implements Comparable<StudentSort>{
+public class StudentSort{
     private int id;
     private String name;
 
@@ -27,11 +27,5 @@ public class StudentSort implements Comparable<StudentSort>{
 
     public String toString(){
         return id + " " + name;
-    }
-
-    @Override
-    public int compareTo(StudentSort that) {
-        //id가 높은순으로 정렬하고싶어.
-        return Integer.compare(this.id,that.id);
     }
 }
