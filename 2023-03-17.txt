@@ -240,3 +240,55 @@ CollectionsBasic package의 ColelctionTreeMap 참고.
 List<? extends Number>list -> 상한 경계 와일드카드          List<? upper Nummber>list -> 하한 경계 와일드카드
 상한 경계 와일드카드는 Number의 하위클래스인 모든 리스트들에 대해 공통된 논리를 구현하는데 도움을 준다.
 하한 경계 와일드카드는 Number의 하위클래스인 여러 다른값들이 추가 될수 있게 도움을 준다.
+
+#Stream 스트림
+선언으로는 IntStream(), StringStream()등 여러가지 자료형에 따라 Stream 메서드가 제공됨
+1. 스트림은 외부 반복을 통해 작업하는 컬렉션과는 달리 내부 반복(internal iteration)을 통해 작업을 수행합니다.
+2. 스트림은 재사용이 가능한 컬렉션과는 달리 단 한 번만 사용할 수 있습니다.
+3. 스트림은 원본 데이터를 변경하지 않습니다.
+4. 스트림의 연산은 필터-맵(filter-map) 기반의 API를 사용하여 지연(lazy) 연산을 통해 성능을 최적화합니다.
+5. 스트림은 parallelStream() 메소드를 통한 손쉬운 병렬 처리를 지원합니다.
+기본적으로 lamda 식을 사용한다. 스트림은 중간 연산과 종단 연산이 있다.
+중간 연산 => .filter(),map(),sort()등 스트림을 사용자가 원하는 또다른 요소 스트림으로 나오게 하는것들.
+종단 연산 => .reduce(),forEach()등 스트림 요소 전체를 소모하거나 하나의 값만 return한다. ex)최소 요소찾기, 최대 요소찾기, 총합찾기, 각요소 소모하기(forEach())
+forEach()메서드는 stream에서 요소를 하나씩 반복하는 메서드.                //종단 연산
+filter()메서드는 안에서 선언한 조건에 맞을경우에만 요소를 넘기는 메서드.        //중간 연산
+sorted()메서드는 정렬메서드.     //중간 연산
+distinct()메서드는 중복제거 메서드 //중간 연산
+map()메서드는 원하는 함수를 적용시키기 위한 중간 연산?같은느낌(각요소에 함수를 적용시킨다는 느낌으로 파이썬의 map()과 동일한것같다.) //중간 연산
+max()메서드는 최대값을 구하는 메서드인데, 최대값을 구하기 위해서 compare(비교자)를 구현해야한다.  //종단연산  //Functional Package에서 FPTest 참고
+ex)List.of(23,12,34,53).stream().max((n1,n2) -> Integer.compare(n1,n2)); 또한 Null값이 나오는것을 방지하기위해 Optional 을 import해줘야한다...
+min()메서드는 최소값을 구하는 메서드이다. max()와 같이 compare을 구현해줘야한다.  //종단연산
+collect()메서드는 요소들을 모아서 컬렉션으로 담을수있게끔 해준다 //종단연산
+boxed()메서드는 IntStream과 같이 원시 타입에 대한 스트림지원을 클래스타입으로 전환하여 사용하기위함 ex)IntStream의 경우 collect()메서드를 적용할수없음.
+즉 primitive(원시타입) -> Wrapper타입으로 반환.
+
+#lambda Expression 람다표현식?
+함수형 인터페이스에 기반을 두고 작동한다.
+가장 중요하다는 filter(), map(), forEach()에서 람다식이 어떤식으로 내부적으로 동작하는지.
+Functional package의 LambdaRunner, MethodReferencesRunner 참고.
+lambda표현식을 메서드 참조로 변환할수있다.
+
+#Method reference 메서드 참조
+람다 표현식을 더 간단하게 (클래스명 :: 메서드)로 표현할수있다.
+
+#Optional
+Type의 일종으로 Null(정확히는 Null pointer exception 에러)이 나오는 상황을 최대한 줄이기 위해 도입 (Java 8부터)
+만일 반환값이 없는경우 Null이 아닌 optional.empty를 반환한다. stream은 Optional의 값을 반환하게 하는게 좋다.
+//Functional package의 WhatOptional 참고 여러 메서드들이 있는데 자세한건 검색
+isPresent() 값이 있는지에 대해 true false
+orElse() 값이 비어있다면 ()안의 값 반환
+
+#Predicate
+//일단 filter() 사용하면 자바 컴파일러가 함수형 인터페이스를 실행하는데, 함수형 인터페이스에서 가장 중요한것은 Predicate처럼
+//하나의 메서드만 정의되지 않는다느것이다. 기본적으로 람다형을 생성할때 특정메소드를 실행해주는 작업을 한다.
+//정리하자면 filter()에서 실행되지않는 유일한 메소드를 불러와서 test메소드가 실행되게 한다.
+//Predicate라고 불리는이유는 하는 작업이 평가를 진행한뒤 참인지 거짓인지 판단하여 그 값을 반환하기 떄문이다.
+//즉 Predicate 인터페이스는 test를 통과했는지 아닌지에 대한 값을 반환한다.
+
+#Functional programming 함수형 프로그래밍?
+가장먼저 변화화는 값을 가지지 않아도 코드를 작성하게할수있다.ex) for문과 stream()
+1.변수에 함수를 넣을수있다.
+2.메서드로부터 반환받는게 함수일수있다.
+3.메서드에 함수를 넣어서 전달할수있다(인자로 넣는 것)
+Functional package의 functionalProgrammingRunner, FPNumberRunner
