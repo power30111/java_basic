@@ -292,3 +292,38 @@ orElse() 값이 비어있다면 ()안의 값 반환
 2.메서드로부터 반환받는게 함수일수있다.
 3.메서드에 함수를 넣어서 전달할수있다(인자로 넣는 것)
 Functional package의 functionalProgrammingRunner, FPNumberRunner
+
+#Thread 쓰레드
+여러 작업을 병렬로 처리하게끔 멀티 쓰레드 방식을 도입할수있다. class 에 extends Thread를 상속받고 내부에 정확히 어떤일을 할것인지 적어줘야한다.(주석으로)
+또한 Thread를 상속받은 클래스를 메서드 이름으로 호출하는것은  일반 메서드로 사용하는것과 다른것이 없게 동작하므로 , start()메서드로 실행해야만한다.
+Thread를 구현하는방법은 2가지가 있는데, 추상클래스인 Thread를 상속받아서 구현하는것과 Runnable인터페이스를 상속받아서 구현하는것이 있다. Threading package -> Threads 참고
+Thread의 우선순위를 정할수도있다. Thread클래스에는 setPriority(int i);로 정할수있는데, 1~10까지의 숫자를 넣을수있다.높을수록 우선순위인데,무조건적으로 적용되는것이 아닌
+반영이 될수도있고 안될수도있는 메서드이다..
+Thread.join() === 특정 Thread의 실행이 끝날 때 까지 대기한다. 이 메서드를 사용하기 위해서는 main메서드에 throws InterruptedException을 해줘야하는데,
+Thread.sleep(1000) ===> 1초동안 대기하는 상태가 된다. (ms기준)
+Thread.yield() ====> 현재 Thread가 Running이 가능한 이상태를 양보하거나 양도하게끔 한다.(무조건적으로 적용되지는않는다)
+
+#Thread state 쓰레드의 상태
+1.New => Thread가 사용될 준비는 끝낫으나 실행하진않음 / start()가 실행되기 전의 상태
+2.Running => Thread가 동작하고있을때 특정 지점 혹은 시점에서의 상태 / ex) 1~100까지 실행하는 코드에서 55일때의 상태
+3.Runnable => Thread가 동작할 기회를 엿보고 있는 느낌의 상태 / ex) Thread1 과 Thread2 가 동작하고있을때 Thread1이 일할땐(Running) Thread2가 Runnable 상태이다. 역도 성립한다.
+4.Terminated/DEAD => Thread가 모든 작업을 끝마치고 아무런 일도 하지않는 상태 / ex)for()문이 끝나면 for문은 신경쓰지않는다.
+5.Block/WAITING => 어떤 입력을 위해 대기하거나, 실행이 완료되지 않는 Thread로 부터 데이털르 입력받아야하는상태
+
+#scheduler 스케줄러
+한정된 메모리를 여러 프로세스가 효율적으로 사용할 수 있도록 실행할 프로세스를 선택하는 것.
+
+#syschronized 동기화
+class 명앞에 synchronized를 붙이면 동기화가 된다. 동기화가 된 클래스나 메서드들은 단 한개의 Thread에서만 접근하여 코드를 실행할수있다.
+만일 이미 하나의 Thread가 동기화된 메서드를 실행하고있다면 다른 Thread는 실행되고있는 Thread가 동기화 코드에 대한 실행이 완료될 때 까지 기다린다.
+동기화는 overhead가 많이 생기는 점을 유의해야한다. 최근에는 syschronized 의 방법이 아닌 다른방법으로도 Thread에 안전하게 접근하는 방법들이 생겨났다.
+
+#Executor Service 실행기
+여러개의 Thread를 한번에 실행할수있고 상태를 확일하수있게끔 해주면서 완료되면 알려줄수도있게끔할수있따. 또한 모든 Thread에게 대기하도록 할수도있다(join()과 비슷하게)
+선언 -> ExecutorService executorService = Executors.newSingleThreadExecutor(); --> 가장기본이 되는 버전으로 한번에 하나의 Thread만이 동작하게끔한다.
+.execute(new Task1()); 선언으로 executorService에서 관리하는 Thread를 생성하고 실행 및 관리할수있다.        Threading package 의 ExecutorServiceRunner 참고
+executorService.shutdown();                             //executorService.shutdown()은 필수적으로 적어줘야한다, 그렇지않으면 ExecutorService에서 관리하는 Thread가 계속 동작하게된다.(아마 DEAD상태...)
+
+#Callable
+특정 값을 반환하는 Thread(Task)의 경우 Callable 인터페이스를 상속받아야한다. ex) class CallableTask implements Callable
+Threading package 의 CallableRunner, MultipleCallableRunner, MultipleAnyCallableRunner 참고

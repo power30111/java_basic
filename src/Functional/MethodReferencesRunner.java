@@ -1,6 +1,7 @@
 package Functional;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class MethodReferencesRunner {
     public static void print(Integer A){
