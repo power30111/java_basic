@@ -313,11 +313,6 @@ Thread.yield() ====> 현재 Thread가 Running이 가능한 이상태를 양보�
 #scheduler 스케줄러
 한정된 메모리를 여러 프로세스가 효율적으로 사용할 수 있도록 실행할 프로세스를 선택하는 것.
 
-#syschronized 동기화
-class 명앞에 synchronized를 붙이면 동기화가 된다. 동기화가 된 클래스나 메서드들은 단 한개의 Thread에서만 접근하여 코드를 실행할수있다.
-만일 이미 하나의 Thread가 동기화된 메서드를 실행하고있다면 다른 Thread는 실행되고있는 Thread가 동기화 코드에 대한 실행이 완료될 때 까지 기다린다.
-동기화는 overhead가 많이 생기는 점을 유의해야한다. 최근에는 syschronized 의 방법이 아닌 다른방법으로도 Thread에 안전하게 접근하는 방법들이 생겨났다.
-
 #Executor Service 실행기
 여러개의 Thread를 한번에 실행할수있고 상태를 확일하수있게끔 해주면서 완료되면 알려줄수도있게끔할수있따. 또한 모든 Thread에게 대기하도록 할수도있다(join()과 비슷하게)
 선언 -> ExecutorService executorService = Executors.newSingleThreadExecutor(); --> 가장기본이 되는 버전으로 한번에 하나의 Thread만이 동작하게끔한다.
@@ -403,3 +398,13 @@ Spring framework의 장점중 하나는 대부분의 예외를 RuntimeExceptions
 그래야 사용자에게 예외가 직접적으로 전달되는 일이 없어지게된다.예외는 stack Trace에 출력되도록 하면서
 사용자에게는 예외에 대해서 무엇을 할 수 있는지를 알려줘야 한다. 그래야 사용자가 지원팀에게 문의할때 원하는 답을 얻을수있을것이다.
 
+#디렉토리,파일에 대해 사용할수있는 연산 및 처리는 files package 를 보자..
+
+#syschronized 동기화
+class 명앞에 synchronized를 붙이면 동기화가 된다. 동기화가 된 클래스나 메서드들은 단 한개의 Thread에서만 접근하여 코드를 실행할수있다.
+만일 이미 하나의 Thread가 동기화된 메서드를 실행하고있다면 다른 Thread는 실행되고있는 Thread가 동기화 코드에 대한 실행이 완료될 때 까지 기다린다.
+동기화는 overhead가 많이 생기는 점을 유의해야한다. 최근에는 syschronized 의 방법이 아닌 다른방법으로도 Thread에 안전하게 접근하는 방법들이 생겨났다.
+
+#thread-safe
+여러 쓰레드가 하나의 변수에 접근하여 변경을 시도하거나, 하나의 메서드에 접근하여 변경을 시도할때, 원하는 값을 얻지 못할수도 있는데, 이러한 접근은 원치않기때문에
+여러 thread가 접근해도 안전하게 원하는 값을 얻을수있는 것을 thread-safe하다 라고 하는듯?
