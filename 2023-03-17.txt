@@ -146,7 +146,7 @@ ArrayList, LinkedList, Vector 등을 사용해야한다. 이미 만들어진 Lis
 1.List 2.Set 3.Queue 4.Map 기본적으로 .of 메서드를 통해 만든것들은 죄다 불변이다.
 초기화방법 List<String> words = List.of("Apple","Bat","Cat");
 자주 사용되는 메서드 size() = list크기 반환, isEmpty() = 비어있는지 확인, get(n) = n번째 인덱스 의 원소 반환,
- contatins(A) = A라는 원소가 있는지 boolean 으로 반환, indexof(A) = A라는 원소가 몇번째 원소에 있는지 반환,존재하지않을경우 -1 반환
+ contains(A) = A라는 원소가 있는지 boolean 으로 반환, indexof(A) = A라는 원소가 몇번째 원소에 있는지 반환,존재하지않을경우 -1 반환
  #instanceof 현재 객체가 특정 클래스의 인스턴스인지 알 수 있게 해준다.
  ex) Class instanceof Object --> true  ,  Object instanceof Class --> false
 
