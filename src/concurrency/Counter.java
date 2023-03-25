@@ -1,7 +1,7 @@
 package concurrency;
 
 public class Counter {
-    int i=0;
+    private int i=0;
 
     public int getI() {
         return i;

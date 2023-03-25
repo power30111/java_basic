@@ -15,9 +15,10 @@ public class DADadDFweo {
         //System.out.println(answer.length);
         //System.out.println(Arrays.stream(numbers).max().getAsInt());//Int[] 에서 최대값 int형으로받기
 
-        List<Integer> integersList1 = IntStream.of(numbers)         //numbers를 IntStream이란 형태의 stream제공
-                .boxed()                                            //boxed()는 primitive타입을 Wrapper 객체로 변경해준다.IntStream -> Stream<Integer>
-                .collect(Collectors.toList());                      //Stream을 새로 list를 만들어준다.
+//        List<Integer> integersList1 = IntStream.of(numbers)         //numbers를 IntStream이란 형태의 stream제공
+//                .boxed()                                            //boxed()는 primitive타입을 Wrapper 객체로 변경해준다.IntStream -> Stream<Integer>
+//                .collect(Collectors.toList());                      //Stream을 새로 list를 만들어준다.
+
 //        int maxNum = IntStream.of(numbers)
 //                .boxed()
 //                .max((n1,n2)->Integer.compare(n1,n2))             //primitive 타입의 배열을 Wrapper 객체로 변경후 최대값을 int로 뽑아냄.
@@ -27,12 +28,11 @@ public class DADadDFweo {
 //        String answer = sb.reverse().toString();                    //toString()메서드를 통해 String으로 변환. 기본 String 문자열 뒤집기.
 
 //        String answer = my_string.replaceAll(letter,"");           //문자열에서 원치않는 단어,문자를 모두 없애고싶어
-
+//        String answer = my_string.toCharArray();                  //python마냥 문자열을 char배열로 접근하고싶어
 //        int b = (5 < 4) ? 50 : 40;                            //삼항연산자. ()안 조건이 참이면 50 아니면 40
 
 //        int[] array33333 = Arrays.copyOf(array,3)             //(원본배열,복사할 길이)
 //        int[] array33333 = Arrays.copyOfRange(array,3,4)      //(원본배열,복사 시작인덱스,복사 종료인덱스)
+
     }
-
-
 }
