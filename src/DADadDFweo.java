@@ -20,8 +20,10 @@ public class DADadDFweo {
         System.out.println(CanSay.length);
         List<Integer> list1 = new ArrayList<>(List.of(1,2,3,4,5,6,7,8,9));
         //System.out.println(answer.length);
-
+        //대문자와 소문자간 ASCII 코드 차이는 32이다.
     //@@@@@@@@@@@@@@@@@@@@@@@@@ 자료형 및 연산자 등 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//        Integer.MIN_VALUE, Integer.MAX_VALUE                                                  //Integer의 최소,최대값.
+
 //        StringBuffer sb = new StringBuffer(my_string);                                        //Stringbuffer 객체 생성한뒤 StringBuffer에서 지원하는 reverse() 메서드를 사용하고
 //        String answer = sb.reverse().toString();                                              //toString()메서드를 통해 String으로 변환. 기본 String 문자열 뒤집기.
 
@@ -44,7 +46,12 @@ public class DADadDFweo {
 
 //          String a = String.valueOf(n);   or Integer.toString();                              //int 형태 자료형 -> String
 //          Integer.valueOf(string);
+//
+//        Character.isUpperCase()를 사용 대문자인지 구별
+//        Character.isLowerCase()를 사용 소문자인지 구별
+//        Character.isDigit()를 사용 숫자인지 구별
 
+//          String.valueOf(boolean,double,float,int)등 String으로 해당객체 형변환
     //@@@@@@@@@@@@@@@@@@@@@@@@@@ stream          스트림 관련@@@@@@@@@@@@@@@@@@@@@@@
         //        Arrays.stream(s1).anyMatch(str::equals)                                       //s1문자열을 stream으로 anyMatch(만일 str와 같은것이 stream에 있다면 return True 아님 false
 
@@ -66,5 +73,9 @@ public class DADadDFweo {
         //            .toArray();                                                               //int Array 중 원하는값을 filter로 걸러내서 int Array로 반환.
 
         //        int[] c = Arrays.stream(a).mapToInt(i -> i).toArray();
+
+        //        mapToInt(), mapToLong(), mapToDouble(), mapToObj();
+
+
     }
 }
