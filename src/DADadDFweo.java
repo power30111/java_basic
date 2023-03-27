@@ -19,7 +19,7 @@ public class DADadDFweo {
         System.out.println("ab = " + ab);
         System.out.println(CanSay.length);
         List<Integer> list1 = new ArrayList<>(List.of(1,2,3,4,5,6,7,8,9));
-        //테스트용 지워도됌dasasdasdasdasdasddasdsdasd
+        //테스트용 지워도됌d
         //System.out.println(answer.length);
         //대문자와 소문자간 ASCII 코드 차이는 32이다.
     //@@@@@@@@@@@@@@@@@@@@@@@@@ 자료형 및 연산자 등 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
