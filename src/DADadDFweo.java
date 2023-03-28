@@ -53,6 +53,11 @@ public class DADadDFweo {
 //        Character.isDigit()를 사용 숫자인지 구별
 
 //          String.valueOf(boolean,double,float,int)등 String으로 해당객체 형변환
+
+//        Collections.swap(list, num1, num2);                                                   //Collections.swap 메서드를 통해 list에서 num1과 num2에 해당하는 부분을 바꿀수있다.
+
+//        ("-" + num).getClass().getName()                                                      //num은 int 자료형이였다. 이런식으로 int자료형을 String으로 변환하는식의 생각이라..
+
     //@@@@@@@@@@@@@@@@@@@@@@@@@@ stream          스트림 관련@@@@@@@@@@@@@@@@@@@@@@@
         //        Arrays.stream(s1).anyMatch(str::equals)                                       //s1문자열을 stream으로 anyMatch(만일 str와 같은것이 stream에 있다면 return True 아님 false
 
@@ -63,9 +68,11 @@ public class DADadDFweo {
 //                .max((n1,n2)->Integer.compare(n1,n2))                                         //primitive 타입의 배열을 Wrapper 객체로 변경후 최대값을 int로 뽑아냄.
 //                .get();
 
+//      **************************************************************************************
 //                List<Integer> integersList1 = IntStream.of(numbers)                           //numbers를 IntStream이란 형태의 stream제공
 //                .boxed()                                                                      //boxed()는 primitive타입을 Wrapper 객체로 변경해준다.IntStream -> Stream<Integer>
 //                .collect(Collectors.toList());                                                //Stream을 새로 list를 만들어준다.
+//      ***************************************************************************************
 
         //          System.out.println(Arrays.stream(numbers).max().getAsInt());                //Int[] 에서 최대값 int형으로받기
 
