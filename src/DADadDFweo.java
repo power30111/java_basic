@@ -19,6 +19,7 @@ public class DADadDFweo {
         System.out.println("ab = " + ab);
         System.out.println(CanSay.length);
         List<Integer> list1 = new ArrayList<>(List.of(1,2,3,4,5,6,7,8,9));
+        //테스트용 지워도됌dasdasdasdasdasd
         //System.out.println(answer.length);
         //대문자와 소문자간 ASCII 코드 차이는 32이다.
     //@@@@@@@@@@@@@@@@@@@@@@@@@ 자료형 및 연산자 등 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -52,6 +53,19 @@ public class DADadDFweo {
 //        Character.isDigit()를 사용 숫자인지 구별
 
 //          String.valueOf(boolean,double,float,int)등 String으로 해당객체 형변환
+
+//        Collections.swap(list, num1, num2);                                                   //Collections.swap 메서드를 통해 list에서 num1과 num2에 해당하는 부분을 바꿀수있다.
+
+//        ("-" + num).getClass().getName()                                                      //num은 int 자료형이였다. 이런식으로 int자료형을 String으로 변환하는식의 생각이라..
+
+//        문자열(String)에 split()하면 그거슨 Arrays가 되는겨..(String[])
+//        String answer = Arrays.stream(my_string.toLowerCase().split(""))                      
+//            .sorted()                                                                         //String 자료형을 String[]자료형으로 변경후
+//            .collect(Collectors.joining());                                                   //원하는 작업한담에 collect(Collectors.joining())으로 String을 이어붙여서 하나의 String자료형으로 return.
+//
+//        String answer = Arrays.stream(my_string.split(""))
+//                .distinct()                                                                  //String 자료형을 String[]자료형으로 변경후
+//                .collect(Collectors.joining());                                               //distinct()메서드로 중복제거 하고 String으로 변환.
     //@@@@@@@@@@@@@@@@@@@@@@@@@@ stream          스트림 관련@@@@@@@@@@@@@@@@@@@@@@@
         //        Arrays.stream(s1).anyMatch(str::equals)                                       //s1문자열을 stream으로 anyMatch(만일 str와 같은것이 stream에 있다면 return True 아님 false
 
@@ -62,9 +76,11 @@ public class DADadDFweo {
 //                .max((n1,n2)->Integer.compare(n1,n2))                                         //primitive 타입의 배열을 Wrapper 객체로 변경후 최대값을 int로 뽑아냄.
 //                .get();
 
+//      **************************************************************************************
 //                List<Integer> integersList1 = IntStream.of(numbers)                           //numbers를 IntStream이란 형태의 stream제공
 //                .boxed()                                                                      //boxed()는 primitive타입을 Wrapper 객체로 변경해준다.IntStream -> Stream<Integer>
 //                .collect(Collectors.toList());                                                //Stream을 새로 list를 만들어준다.
+//      ***************************************************************************************
 
         //          System.out.println(Arrays.stream(numbers).max().getAsInt());                //Int[] 에서 최대값 int형으로받기
 
