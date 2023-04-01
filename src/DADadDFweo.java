@@ -66,6 +66,7 @@ public class DADadDFweo {
 //        String answer = Arrays.stream(my_string.split(""))
 //                .distinct()                                                                  //String 자료형을 String[]자료형으로 변경후
 //                .collect(Collectors.joining());                                               //distinct()메서드로 중복제거 하고 String으로 변환.
+                                //joining(delimiter,prefix,suffix)로 각각 (각요소 중간에 들어갈 구분자, 결과 맨앞에 붙는 문자, 맨뒤에 붙는문자);
     //@@@@@@@@@@@@@@@@@@@@@@@@@@ stream          스트림 관련@@@@@@@@@@@@@@@@@@@@@@@
         //        Arrays.stream(s1).anyMatch(str::equals)                                       //s1문자열을 stream으로 anyMatch(만일 str와 같은것이 stream에 있다면 return True 아님 false
 
@@ -90,8 +91,13 @@ public class DADadDFweo {
 
         //        int[] c = Arrays.stream(a).mapToInt(i -> i).toArray();
 
-        //        mapToInt(), mapToLong(), mapToDouble(), mapToObj();
+        //        mapToInt(), mapToLong(), mapToDouble(), mapToObj();                          //mapToObj -> 원시객체를 Wrapper객체로
 
-
+//        Arrays.stream(
+//                        Arrays.stream(array)                                                  //int[] 자료형을 받아서,
+//                                .mapToObj(String::valueOf)                                    //mapToObj로 String으로 변환
+//                                .collect(Collectors.joining())                                //collect사용하여 하나의 문자열로 변환
+//                                .split("")                                                    //그걸 문자배열로 변환.
+        
     }
 }
