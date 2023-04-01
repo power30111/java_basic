@@ -58,7 +58,8 @@ public class DADadDFweo {
 
 //        ("-" + num).getClass().getName()                                                      //num은 int 자료형이였다. 이런식으로 int자료형을 String으로 변환하는식의 생각이라..
 
-
+//        String[] str = my_string.replaceAll("[a-zA-Z]", " ").split(" ");                      //String 문자열에 a~z 까지 랑 A~Z까지를 전부 빈칸으로 replace..
+                                                                                                //정규표현식..? 에대해서 검색해보기.
     //@@@@@@@@@@@@@@@@@@@@@@@@@@ stream          스트림 관련@@@@@@@@@@@@@@@@@@@@@@@
         //        Arrays.stream(s1).anyMatch(str::equals)                                       //s1문자열을 stream으로 anyMatch(만일 str와 같은것이 stream에 있다면 return True 아님 false
 
