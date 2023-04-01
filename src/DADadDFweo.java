@@ -58,15 +58,8 @@ public class DADadDFweo {
 
 //        ("-" + num).getClass().getName()                                                      //num은 int 자료형이였다. 이런식으로 int자료형을 String으로 변환하는식의 생각이라..
 
-//        문자열(String)에 split()하면 그거슨 Arrays가 되는겨..(String[])
-//        String answer = Arrays.stream(my_string.toLowerCase().split(""))                      
-//            .sorted()                                                                         //String 자료형을 String[]자료형으로 변경후
-//            .collect(Collectors.joining());                                                   //원하는 작업한담에 collect(Collectors.joining())으로 String을 이어붙여서 하나의 String자료형으로 return.
-//
-//        String answer = Arrays.stream(my_string.split(""))
-//                .distinct()                                                                  //String 자료형을 String[]자료형으로 변경후
-//                .collect(Collectors.joining());                                               //distinct()메서드로 중복제거 하고 String으로 변환.
-                                //joining(delimiter,prefix,suffix)로 각각 (각요소 중간에 들어갈 구분자, 결과 맨앞에 붙는 문자, 맨뒤에 붙는문자);
+//        String[] str = my_string.replaceAll("[a-zA-Z]", " ").split(" ");                      //String 문자열에 a~z 까지 랑 A~Z까지를 전부 빈칸으로 replace..
+                                                                                                //정규표현식..? 에대해서 검색해보기.
     //@@@@@@@@@@@@@@@@@@@@@@@@@@ stream          스트림 관련@@@@@@@@@@@@@@@@@@@@@@@
         //        Arrays.stream(s1).anyMatch(str::equals)                                       //s1문자열을 stream으로 anyMatch(만일 str와 같은것이 stream에 있다면 return True 아님 false
 
@@ -91,13 +84,15 @@ public class DADadDFweo {
 
         //        int[] c = Arrays.stream(a).mapToInt(i -> i).toArray();
 
-        //        mapToInt(), mapToLong(), mapToDouble(), mapToObj();                          //mapToObj -> 원시객체를 Wrapper객체로
+        //        mapToInt(), mapToLong(), mapToDouble(), mapToObj();
+        //        문자열(String)에 split()하면 그거슨 Arrays가 되는겨..(String[])
+//        String answer = Arrays.stream(my_string.toLowerCase().split(""))
+//            .sorted()                                                                         //String 자료형을 String[]자료형으로 변경후
+//            .collect(Collectors.joining());                                                   //원하는 작업한담에 collect(Collectors.joining())으로 String을 이어붙여서 하나의 String자료형으로 return.
+//
+//        String answer = Arrays.stream(my_string.split(""))
+//                .distinct()                   //중복제거                                       //String 자료형을 String[]자료형으로 변경후
+//                .collect(Collectors.joining());                                               //distinct()메서드로 중복제거 하고 String으로 변환.
 
-//        Arrays.stream(
-//                        Arrays.stream(array)                                                  //int[] 자료형을 받아서,
-//                                .mapToObj(String::valueOf)                                    //mapToObj로 String으로 변환
-//                                .collect(Collectors.joining())                                //collect사용하여 하나의 문자열로 변환
-//                                .split("")                                                    //그걸 문자배열로 변환.
-        
     }
 }
