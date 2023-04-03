@@ -101,6 +101,6 @@ public class DADadDFweo {
 //                                .mapToObj(String::valueOf)                                    //mapToObj로 String으로 변환
 //                                .collect(Collectors.joining())                                //collect사용하여 하나의 문자열로 변환
 //                                .split("")                                                    //그걸 문자배열로 변환.
-
+//      Arrays.
     }
 }
